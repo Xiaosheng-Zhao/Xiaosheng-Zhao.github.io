@@ -31,6 +31,19 @@ div#tableContainer {
 	border-spacing: 10px;
 }
 
+div#tableContainerfirst {
+	display: table;
+	border-spacing: 10px;
+  margin-right: 0%;
+}
+
+div#wordcenter {
+	display: table;
+  margin-right: 10%;
+  margin-left: 10%;
+  text-align:       center;
+}
+
 div#tableRow {
 	display: table-row;
 }
@@ -54,9 +67,9 @@ section#main, section#blog {
 
 section#home {
   display: table-cell;
-  background:       #c9c8c5 url(images/Yaabot_Chaos.png) top left;
+  background:       #c9c8c5 url(images/Yaabot_Chaos.png) center;
   font-size:        150%;
-  padding:          30px;
+  padding:          300px;
   vertical-align: top;
   font-family:      "Times New Roman"
 }
