@@ -1,0 +1,23 @@
+
+ <body>
+    <div id="app" style="width:100px;height:100px;background:red">
+        <div id="demo" style="width:50px;height:50px;background:green"></div>
+    </div>
+    <!-- 建一个div盒子，heigh：2000px,更好地看出页面滚动效果 -->
+    <div style="height: 20000px;"></div>
+
+    <script>
+        window.onscroll = function () {
+            //设置scrollTop > 300，即滚动条向下滚动，div的内容上方超出浏览器最顶部位置>300。
+            if (document.documentElement.scrollTop > 300) {
+                //设置固定定位，固定高度0px
+                app.style.position = 'fixed'
+                app.style.top = 0
+            } else {
+                //static ：position默认值 没有定位
+                app.style.position = 'static'
+            }
+        }
+ </script>
+ </body>
+
