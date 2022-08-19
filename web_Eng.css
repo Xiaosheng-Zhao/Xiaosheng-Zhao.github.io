@@ -31,7 +31,7 @@ blockquote {
 nav {
   background-color: #fcfbfa;
   margin: 5px 0px 0px 0px;
-  margin-left: 50%;
+  margin-left: 53%;
   float: left;
 }
 nav ul {
@@ -85,10 +85,10 @@ div#change nav ul {
 }
 div#change nav ul li {
   display: inline;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 5px 0px 5px;
 }
 div#change nav ul li a:link, div#change nav ul li a:visited {
-  color: #e013e0;
+  color: #060606;
   border-bottom: none;
   font-weight: bold;
 }
