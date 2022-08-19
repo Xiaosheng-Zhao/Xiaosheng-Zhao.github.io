@@ -268,3 +268,8 @@ div#change nav ul li a:link, div#change nav ul li a:visited {
 div#change nav ul li.selected {
   background-color: #3d3c3c;
 }
+
+/*image center*/
+.aligncenter {
+  text-align:       center;
+}
