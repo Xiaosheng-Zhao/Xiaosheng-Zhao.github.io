@@ -31,7 +31,8 @@ blockquote {
 nav {
   background-color: #fcfbfa;
   margin: 5px 0px 0px 0px;
-  margin-left: 67%;
+  margin-left: 50%;
+  float: left;
 }
 nav ul {
   margin: 0px;
@@ -54,4 +55,43 @@ nav ul li.selected {
 /*container*/
 div#Container {
 	display: table;
+}
+
+/*update info*/
+footer {
+  border-top:   thin dotted #888888;
+  background-color: #ffffff;
+  color:            #090909;
+  text-align:       center;
+  padding:          15px;
+  margin: 0px 10px 10px 10px;
+  font-size:        90%;
+}
+
+/*nav for EH/CH*/
+div#change {
+  margin-left: 50px;
+  float: left;
+}
+
+div#change nav {
+  background-color: #fcfbfa;
+  margin: 5px 0px 0px 0px;
+}
+div#change nav ul {
+  margin: 0px;
+  list-style-type: none;
+  padding: 5px 0px 5px 0px;
+}
+div#change nav ul li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+div#change nav ul li a:link, div#change nav ul li a:visited {
+  color: #e013e0;
+  border-bottom: none;
+  font-weight: bold;
+}
+div#change nav ul li.selected {
+  background-color: #fefcfc;
 }
