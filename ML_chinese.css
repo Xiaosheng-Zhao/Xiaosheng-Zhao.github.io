@@ -127,8 +127,10 @@ a:visited {
 
 
 nav {
-    background-color: #6e6d6c;
+  background-color: #6e6d6c;
 	margin: 10px 10px 0px 10px;
+  float: left;
+  
 }
 nav ul {
 	margin: 0px;
@@ -238,4 +240,31 @@ section#drinks nav ul li a:link, section#drinks nav ul li a:visited {
 	color: #0f0f0e;
 	border-bottom: none;
 	font-weight: bold;
+}
+
+/*nav for EH/CH*/
+div#change {
+  margin-left: 50px;
+  float: right;
+}
+div#change nav {
+  background-color: #6e6d6c;
+  margin: 10px 10px 0px 10px;
+}
+div#change nav ul {
+  margin: 0px;
+  list-style-type: none;
+  padding: 5px 0px 5px 0px;
+}
+div#change nav ul li {
+  display: inline;
+  padding: 5px 10px 5px 10px;
+}
+div#change nav ul li a:link, div#change nav ul li a:visited {
+  color: #f8f4f4;
+  border-bottom: none;
+  font-weight: bold;
+}
+div#change nav ul li.selected {
+  background-color: #3d3c3c;
 }
