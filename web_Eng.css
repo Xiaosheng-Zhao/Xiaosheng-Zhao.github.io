@@ -29,7 +29,7 @@ blockquote {
 
 /*nav*/
 nav {
-  background-color: #fcfbfa;
+  background-color: #ffffff;
   margin: 5px 0px 0px 0px;
   
   float: left;
@@ -49,7 +49,7 @@ nav ul li a:link, nav ul li a:visited {
   font-weight: bold;
 }
 nav ul li.selected {
-  background-color: #fefcfc;
+  background-color: #c0b7b7;
 }
 
 /*container*/
@@ -74,7 +74,7 @@ div#change {
   float: right;
 }
 div#change nav {
-  background-color: #fcfbfa;
+  background-color: #ffffff;
   margin: 5px 0px 0px 0px;
 }
 div#change nav ul {
@@ -92,7 +92,7 @@ div#change nav ul li a:link, div#change nav ul li a:visited {
   font-weight: bold;
 }
 div#change nav ul li.selected {
-  background-color: #fefcfc;
+  background-color: #ffffff;
 }
 
 /*href*/
