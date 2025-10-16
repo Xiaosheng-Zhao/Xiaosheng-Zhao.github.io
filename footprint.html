@@ -1,97 +1,42 @@
+<!-- ========== footprint.html ========== -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Xiaosheng Zhao's Metaverse</title>
-    <link rel="stylesheet" type="text/css" href="ML_chinese.css">
-  </head> 
-
-  <body>
-    <header class="top">
-	<h1> Xiaosheng Zhao's Metaverse</h1>
-
-    </header>
-  
-  <div>
-	<nav>
-	<ul>
-		<li><a href="index_chinese.html">HOME</a></li>
-    <li class="selected"><a href="footprint.html">Footprint</a></li>
-		<li><a href="astro_chinese.html">Astrophysics</a></li>
-		<!--<li><a href="DS.html">Data science</a></li>-->
-    <li><a href="interact.html">Interaction</a></li>
-    <!--<li><a href="Blog.html">Blog</a></li>-->
-        
-	</ul>
-	</nav>
-
-  <div id="change">
-    <nav>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>足迹 | 赵晓生</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <h1>足迹 Footprint</h1>
+      <nav class="nav">
         <ul>
-            <li><a href="index.html">EN</a> </li>
-            <!--<li><a href="index_chinese.html">CH</a> </li>-->
+          <li><a href="index.html">首页</a></li>
+          <li class="active"><a href="footprint.html">足迹</a></li>
+          <li><a href="astro.html">天体物理</a></li>
         </ul>
-    </nav>
-  </div>
-  <div style="clear:both"></div>
-  </div>
+      </nav>
+    </div>
+  </header>
 
-	<div id="tableContainer">
-	<div id="tableRow">
-        <section id="drinks">
-            <h2>目录 (Contents)</h2>
-            <nav>
-              <ul>
-                <li><a href="#born">出生以及高中前教育</a></li>
-                <li><a href="#senior">高中</a></li>
-                <li><a href="#UG">大学本科</a></li>
-                <li><a href="#G">博士生</a></li>
-                <li><a href="#V">访问</a></li>
-              </ul>
-            </nav>
-          </section>
-
-    <section id="main">
-
-      <div id="born">
-        <h2>出生以及高中前教育 (Born and education before senior high school)</h2>
-        <p>我出生在一个重庆市巴南区石龙镇的一个小山村，名叫大桥村，因为从镇上到我们村需要跨过一条小河，河上有一座桥就叫大桥。这是一个我的整个高中前教育都是这个镇上完成的：其中小学在石龙镇中心小学校，初中则在石龙镇初级中学校。</p>
+  <main class="container">
+    <section>
+      <h2>成长历程</h2>
+      <div class="cards">
+        <article class="card"><h3>出生与早期教育</h3><p>出生于重庆市巴南区石龙镇大桥村，小学与初中皆在当地完成。</p></article>
+        <article class="card"><h3>高中</h3><img src="images/senior2.jpg" alt="High School" style="max-width:100%;border-radius:8px;"></article>
+        <article class="card"><h3>大学本科</h3><img src="images/BS.jpg" alt="Undergraduate" style="max-width:100%;border-radius:8px;"></article>
+        <article class="card"><h3>研究生</h3><img src="images/THU.jpg" alt="Graduate" style="max-width:100%;border-radius:8px;"></article>
+        <article class="card"><h3>访问学者</h3><img src="images/iap.jpeg" alt="Visiting" style="max-width:100%;border-radius:8px;"></article>
       </div>
-      <div id="senior">
-      <h2>高中 (Senior high school)</h2>
-      <p><img src="images/junior2.jpg" alt="senior1" width="300px"</p>
-      <p><img src="images/senior2.jpg" alt="senior2" width="300px"</p>
-     </div>
-
-      <br>
-      <div id="UG">
-      <h2>大学本科 (Undergraduate school)</h2>
-      <p><img src="images/BS.jpg" alt="undergraduate school" width="300px"</p>
-      </div>
-
-      <br>
-      <div id="G">
-      <h2>研究生 (Graduate school)</h2>
-      <p><img src="images/THU.jpg" alt="graduate school" width="300px"</p>
-     </div>
-
-      <br>
-      <div id="V">
-      <h2>访问 (Visitor)</h2>
-      <p><img src="images/iap.jpeg" alt="visiting" width="300px"</p>
-     </div>
-
     </section>
+  </main>
 
-	</div> <!-- tableRow -->
-	</div> <!-- tableContainer -->
-
-    <footer>
-      &copy; 2021, Xiaosheng
-      <br>
-      All trademarks and registered trademarks appearing on 
-      this site are the property of their respective owners.
-    </footer>
-
-  </body>
+  <footer class="footer">
+    <p>&copy; <span id="year3"></span> 赵晓生</p>
+  </footer>
+  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
+</body>
 </html>
