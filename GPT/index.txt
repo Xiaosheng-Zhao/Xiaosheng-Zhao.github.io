@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xiaosheng Zhao</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <div class="profile">
+        <img src="images/me_250.jpg" alt="Portrait of Xiaosheng Zhao" class="profile-pic">
+        <div>
+          <h1>Xiaosheng Zhao</h1>
+          <p class="title">Assistant Research Scientist | Johns Hopkins University</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="researches.html">Research</a></li>
+          <li><a href="DS_Eng.html">Data Science</a></li>
+          <li><a href="file/Xiaosheng_Zhao_CV.pdf">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Welcome!</h2>
+      <p>
+        My research focuses on using <strong>machine learning</strong> (ML) to advance astronomy—uncovering the Milky Way’s composition and evolutionary history, probing the universe’s origin and content, and bridging these scales. As a member of the <strong>Subaru Prime Focus Spectrograph (PFS) JHU Galactic Archaeology group</strong>, I develop and apply ML methods—including foundation models—to stellar spectra for chemical abundance and radial velocity estimation, and to constrain the inner dark matter profiles of dwarf spheroidal galaxies.
+      </p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:xszhao20@gmail.com">xszhao20@gmail.com</a></li>
+        <li><strong>ORCID:</strong> <a href="https://orcid.org/0000-0002-8328-1447">0000-0002-8328-1447</a></li>
+        <li><strong>Institution:</strong> Johns Hopkins University, Baltimore, MD, USA</li>
+      </ul>
+    </section>
+
+    <section class="highlight">
+      <h2>Recent Highlights</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>SpecCLIP: Foundation Model for Stellar Spectra</h3>
+          <p>Cross-survey generalization across LAMOST, Gaia XP, and DESI using contrastive pre-training and LoRA fine-tuning strategies.</p>
+        </article>
+        <article class="card">
+          <h3>21 cm Cosmology with SBI + Scattering Transform</h3>
+          <p>Simulation-based inference framework applied to reionization parameters with 3D scattering representations (<a href="https://arxiv.org/abs/2310.17602">arXiv:2310.17602</a>).</p>
+        </article>
+        <article class="card">
+          <h3>Polymer & DNA Complexation Simulations</h3>
+          <p>HOOMD-blue simulations for polymer-DNA self-assembly and interaction energetics using coarse-grained Extended Bonding Theory (cEBT).</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Xiaosheng Zhao | All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

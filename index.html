@@ -1,27 +1,141 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<style type=text/css>
-p {
-    color: #0ecc8a;
-    font-weight: 900;
-    font-size: 20px;
-    font-family: Helvetica, Arial, sans-serif;    
-}
-
-div {
-  background-color: gray;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xiaosheng Zhao | Astrophysics & Machine Learning</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
-
 <body>
+  <!-- ================= HEADER ================= -->
+  <header class="hero">
+    <div class="container hero-content">
+      <img src="images/me_250.jpg" alt="Xiaosheng Zhao" class="hero-photo">
+      <div>
+        <h1>Xiaosheng Zhao</h1>
+        <p class="subtitle">Postdoctoral Fellow, Johns Hopkins University</p>
+        <p>
+          <a href="mailto:xzhao113@jh.edu">📧 xzhao113@jh.edu</a> |
+          <a href="https://orcid.org/0000-0002-8328-1447">ORCID</a> |
+          <a href="https://scholar.google.com/citations?user=xxxx">Google Scholar</a> |
+          <a href="https://github.com/Xiaosheng-Zhao">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </header>
 
+  <!-- ================= BIO ================= -->
+  <section class="container bio">
+    <h2>About Me</h2>
+    <p>
+        My research focuses on developing and applying machine learning methods for astrophysics and cosmology,
+        spanning both <strong>Galactic archaeology</strong> and <strong>early-universe inference</strong>.
+        At <strong>Johns Hopkins University</strong>, I currently work on <strong>spectral foundation models</strong>—such as
+        <strong>SpecCLIP</strong> and its fine-tuned extensions—for cross-survey generalization across
+        LAMOST, Gaia XP, DESI, <strong>Prime Focus Spectrograph (PFS)</strong>, etc. I am also interested in the inference of <strong>dark matter profile</strong> from dwarf spheroidal galaxies with PFS.
+        My previous doctoral research at <strong>Tsinghua University</strong> explored the epoch of reionization
+        using <strong>simulation-based inference (SBI)</strong> and <strong>optimal summary statistics</strong>, and introduced
+        generative approaches (e.g., <strong>diffusion models</strong>) for astrophysical image synthesis.
+        Broadly, I am interested in connecting data-driven representation learning with <strong>physical interpretability</strong>
+        to extract scientific insights from large, heterogeneous astronomical datasets.
+    </p>
+  </section>
 
-<div>
-<p>Coming soon ...</p>
-</div>
-<p><a href="index.html">Back to Home</a></p>
+  <!-- ================= PUBLICATIONS ================= -->
+  <section class="container publications">
+    <h2>Selected Publications</h2>
 
+    <div class="pub">
+      <img src="images/LoRA_SpecCLIP.png" alt="LoRA figure">
+      <div>
+        <h3><a href="https://arxiv.org/abs/2507.20972">Fine-tuning Stellar Spectra Foundation Models with LoRA</a></h3>
+        <p><strong>Zhao, X.</strong>, Ting, Y.-S., Szalay, A. S., Huang, Y., 2025, ICML ML4Astro Workshop</p>
+        <p>Lightweight adaptation approach for pre-trained spectral models, achieving few-shot generalization to DESI spectra.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img src="images/CLIP_model_full.png" alt="SpecCLIP figure">
+      <div>
+        <h3><a href="https://arxiv.org/abs/2507.01939">SpecCLIP: Aligning and Translating Spectroscopic Measurements for Stars</a></h3>
+        <p><strong>Zhao, X.</strong>, Huang, Y., Xue, G., Ting, Y.-S., Szalay, A. S., et al., 2025 (submitted)</p>
+        <p>Foundation model for stellar spectra enabling cross-survey generalization between LAMOST LRS and Gaia XP.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+        <img src="images/Diffusion.png" alt="DDPM figure">
+        <div>
+            <h3><a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.tmp.2660Z/abstract">
+                Can Diffusion Models Conditionally Generate Astrophysical Images?</a></h3>
+            <p><strong>Zhao, X.</strong>, Ting, Y.-S., Diao, K., Mao, Y., 2023, <em>Monthly Notices of the Royal Astronomical Society</em>, 526, 1699</p>
+            <p>Applies denoising diffusion probabilistic models (DDPM) for conditional astrophysical image generation, bridging physical priors and deep generative modeling.</p>
+        </div>
+    </div>
+
+    <div class="pub">
+        <img src="images/samples.png" alt="3D Lightcone Inference figure">
+        <div>
+            <h3><a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...926..151Z/abstract">
+                Simulation-Based Inference of Reionization Parameters from 3D Tomographic 21 cm Lightcone Images
+            </a></h3>
+            <p><strong>Zhao, X.</strong>, Mao, Y., Cheng, C., Wandelt, B. D., 2022, <em>Astrophysical Journal</em>, 926, 151</p>
+            <p>
+                Introduced a simulation-based inference framework that constrains reionization parameters 
+                directly from 3D 21 cm lightcone images. 
+            </p>
+        </div>
+    </div>
+
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="container experience">
+    <h2>Education & Positions</h2>
+
+    <div class="exp-item">
+      <h3>Postdoctoral Fellow, Johns Hopkins University</h3>
+      <p><em>Aug 2024 – Present | Baltimore, USA</em><br>
+      Supervisors: Prof. Alex Szalay & Prof. Rosemary Wyse</p>
+    </div>
+
+    <div class="exp-item">
+      <h3>Visiting, Institut d'Astrophysique de Paris</h3>
+      <p><em>2022 – 2024 | Mentor: Prof. Benjamin D. Wandelt</em><br>
+      Focus: <em>(explainable) ML for astrophysics and cosmology</em></p>
+    </div>
+
+    <div class="exp-item">
+      <h3>PhD in Astronomy, Tsinghua University</h3>
+      <p><em>2018 – 2024 | Advisor: Prof. Yi Mao</em><br>
+      Thesis: <em>Exploring the Epoch of Reionization with Machine Learning</em></p>
+    </div>
+
+    <div class="exp-item">
+      <h3>BSc in Physics, Wuhan University</h3>
+      <p><em>2014 – 2018</em></p>
+    </div>
+  </section>
+
+  <!-- ================= TALKS ================= -->
+  <section class="container talks">
+    <h2>Talks & Highlights</h2>
+    <ul>
+      <li><strong>ICML 2025 (ML4Astro Workshop)</strong> — Spotlight talk on LoRA for spectral foundation models.</li>
+      <li><strong>JHU/STScI CAS Wine & Cheese Seminar (2025)</strong> — <em>From 21cm Cosmology to Galactic Archaeology.</em></li>
+      <li><strong>SAZERAC 2023</strong> — Inference of reionization parameters from 21cm data.</li>
+    </ul>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Xiaosheng Zhao | Johns Hopkins University</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+

@@ -1,77 +1,67 @@
+<!-- ========== DS_Eng.html ========== -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Xiaosheng Zhao</title>
-    <link type="text/css" rel="stylesheet" href="web_Eng.css">
-  </head>
-  <body>
-    <h1>Xiaosheng Zhao</h1>
-    <div>
-    <nav>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Science | Xiaosheng Zhao</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <h1>Data Science</h1>
+      <nav class="nav">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="file/Xiaosheng_Zhao_s_Resume.pdf">CV</a></li>
-            <li><a href="researches.html">Research</a></li>
-            
-            <li class="selected"><a href="DS_Eng.html">Data science</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="researches.html">Research</a></li>
+          <li class="active"><a href="DS_Eng.html">Data Science</a></li>
+          <li><a href="file/Xiaosheng_Zhao_CV.pdf">CV</a></li>
         </ul>
-    </nav>
-
-    <div id="change">
-        <nav>
-            <ul>
-                <li><a href="index.html">EN</a> </li>
-                <!--<li><a href="index_chinese.html">CH</a> </li>-->
-            </ul>
-        </nav>
+      </nav>
     </div>
+  </header>
 
-    <div style="clear:both"></div>
-    </div>
+  <main class="container">
+    <section>
+      <h2>Definition</h2>
+      <blockquote>
+        “Data science combines statistical modeling, computational design, and domain expertise to extract knowledge and actionable insights from complex data.”
+      </blockquote>
+      <div class="aligncenter">
+        <img src="images/Data_Science_VD.png" alt="Data Science Venn Diagram" style="max-width:300px;">
+        <p class="caption">Source: <a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">Drew Conway</a></p>
+      </div>
+    </section>
 
-    <hr>
-    <div id="Container">
+    <section>
+      <h2>Courses</h2>
+      <ul>
+        <li>Statistics and Numerical Methods</li>
+        <li>Advanced Machine Learning</li>
+        <li>Big Data Systems & Analytics</li>
+        <li>Data Visualization</li>
+        <li>Audited: Database Systems, Deep Learning, Meituan Big Data Practice</li>
+      </ul>
+    </section>
 
-        <h2>A definition of data science</h2>
-            <blockquote>
-                <p>
-                    "Data science comprises three distinct and overlapping areas: the skills of a statistician who knows how to model and summarize datasets (which are growing ever larger); the skills of a computer scientist who can design and use algorithms to efficiently store, process, and visualize this data; and the domain expertise—what we might think of as "classical" training in a subject—necessary both to formulate the right questions and to put their answers in context."
-                </p>
-            </blockquote>
-            <p class="aligncenter"><img src="images/Data_Science_VD.png" alt="Data science" width="300px"</p>
-            <p class="caption">Source:<a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">Drew Conway</a></p>
-        
-        <h2>Classes</h2>
-        <p>
-            <ul>
-                <li>Attended: Statistics and Numerical Methods, Advanced Machine Learning, Big Data Systems, Big Data Analytics, Data visualization<!--, Big Data: Governance and Policy--></li>
-                <li>As an auditor: Meituan Big Data Practice and Application, Database, Deep learning</li>
-            </ul>
-        </p>
+    <section>
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card"><h3>Breast Cancer Cell Classification</h3><p>Computer Vision using CNNs.</p></article>
+        <article class="card"><h3>Classical Chinese Translation</h3><p>Natural Language Processing using RNNs, LSTMs, and Transformers.</p></article>
+        <article class="card"><h3>Handwritten Character Recognition</h3><p>ANN and CNN on Omniglot Dataset.</p></article>
+        <article class="card"><h3>Recommendation Systems</h3><p>Collaborative Filtering and Matrix Factorization.</p></article>
+        <article class="card"><h3>Social Group Behavior Analysis</h3><p>Statistical tests, sampling, regression, visualization.</p></article>
+        <article class="card"><h3>Iron Industry Data Platform</h3><p>Big Data Management and API-driven visualization.</p></article>
+      </div>
+    </section>
+  </main>
 
-        <h2>Projects</h2>
-        <p>
-            <ul>
-                <li>Classification and identification of breast cancer cells: <i>Computer vision, CNN</i></li>
-                <li>Classical Chinese to Vernacular Translation: <i>NLP — RNN, LSTM, Transformer</i></li>
-                <li>Handwritten Character Recognization: <i>Computer vision, Omniglot, ANN, CNN</i></li>
-                <li>Recommendation system: <i>Collaborative Filtering, Matrix Factorization</i></li>
-                <li>Analysis of the Collaborative Behavior of Social Groups in Sociology: <i>ANOVA, Sampling, Regression, Basic analysis skills, Visualization, Dealing with real data</i></li>
-                <li>Research and development of big data management and enabling platform for iron industry (preliminary): <i>Data reading, data processing, API construction, calling API interface for visual display</i></li>
-                <li>Visualization of world poverty distribution: <i>D3.js</i></li>
-                <li>2022 WeChat Big Data Challenge - Multimodal Short-Video Classification: <i>NLP — transformer, pre-training</i></li>
-            </ul>
-        </p>
-
-    </div>
-
-    <hr>
-    <footer>
-        &copy; Last updated: 2022.8.20
-        <br>
-        All trademarks and registered trademarks appearing on 
-        this site are the property of their respective owners.
-      </footer>
-  </body>
+  <footer class="footer">
+    <p>&copy; <span id="year2"></span> Xiaosheng Zhao | All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
 </html>
+
