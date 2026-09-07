@@ -1,156 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xiaosheng Zhao | Astrophysics & Machine Learning</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xiaosheng Zhao — Assistant Research Scientist · Johns Hopkins University</title>
+<meta name="description" content="Xiaosheng Zhao 赵晓胜: Assistant Research Scientist at Johns Hopkins University. Machine learning for astrophysics — Galactic archaeology, spectral foundation models, reionization cosmology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a2e;
+    --text-2: #44475a;
+    --text-3: #6c7086;
+    --accent: #2b5ea7;
+    --accent-light: #e8f0fe;
+    --gold: #b8860b;
+    --border: #e5e7eb;
+    --card-bg: #f9fafb;
+    --serif: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  ::selection { background: rgba(43, 94, 167, .15); }
+
+  /* ---- nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .85rem 1.5rem;
+  }
+  .nav-brand {
+    font-weight: 700; font-size: .95rem; color: var(--text);
+    text-decoration: none; letter-spacing: -.01em;
+  }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; }
+  .nav-links a {
+    font-size: .84rem; font-weight: 500; color: var(--text-3);
+    text-decoration: none; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-right { display: flex; gap: .5rem; align-items: center; }
+  .btn-sm {
+    font-family: var(--sans); font-size: .76rem; font-weight: 600;
+    padding: .3rem .75rem; border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-3); transition: all .2s;
+  }
+  .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---- layout: narrow side + main ---- */
+  .layout {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; gap: 3.5rem; align-items: flex-start;
+    padding: 3rem 1.5rem 0;
+  }
+  .side {
+    width: 200px; flex: 0 0 200px;
+    position: sticky; top: 4.5rem;
+    align-self: flex-start;
+  }
+  .side .avatar {
+    width: 150px; height: 150px; border-radius: 50%;
+    object-fit: cover; border: 3px solid var(--border);
+    background: var(--card-bg); display: block; margin-bottom: .9rem;
+  }
+  .side h1 {
+    font-size: 1.55rem; font-weight: 700; letter-spacing: -.02em;
+    line-height: 1.2; margin-bottom: .35rem;
+  }
+  .side .role {
+    font-size: .95rem; color: var(--text-2); font-weight: 400;
+    margin-bottom: .35rem;
+  }
+  .side .affiliation {
+    font-size: .85rem; color: var(--text-3); line-height: 1.6;
+  }
+  .side .affiliation a { color: var(--accent); text-decoration: none; }
+  .side .affiliation a:hover { text-decoration: underline; }
+  .side .social-row {
+    display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem;
+  }
+  .side .social-pill {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .72rem; font-weight: 500; color: var(--text-2);
+    text-decoration: none; padding: .28rem .6rem;
+    border: 1px solid var(--border); border-radius: 99px;
+    transition: all .2s;
+  }
+  .side .social-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .side .social-pill svg { width: 12px; height: 12px; fill: currentColor; }
+  .main { flex: 0 1 800px; min-width: 0; }
+  .about-body p { font-size: .98rem; color: var(--text-2); margin-bottom: 1rem; line-height: 1.75; }
+  .about-body strong { color: var(--text); font-weight: 600; }
+  .about-body a { color: var(--accent); text-decoration: none; }
+  .about-body a:hover { text-decoration: underline; }
+
+  /* ---- sections ---- */
+  section { padding: 2.8rem 0; }
+  section + section { border-top: 1px solid var(--border); }
+  section h2 {
+    font-size: 1.3rem; font-weight: 700; letter-spacing: -.01em;
+    margin-bottom: 1.5rem; color: var(--text);
+  }
+  section h2 .sec-label {
+    font-size: .75rem; font-weight: 600; color: var(--accent);
+    text-transform: uppercase; letter-spacing: .08em;
+    display: block; margin-bottom: .25rem;
+  }
+
+  /* ---- timeline ---- */
+  .timeline-list { list-style: none; }
+  .timeline-list li {
+    display: grid; grid-template-columns: 150px 1fr; gap: 1rem;
+    align-items: start;
+    padding: .8rem 0; border-bottom: 1px solid var(--border);
+    font-size: .92rem;
+  }
+  .timeline-list li:last-child { border-bottom: none; }
+  .tl-date { font-weight: 600; color: var(--accent); font-size: .82rem; white-space: nowrap; line-height: 1.5; }
+  .tl-body { color: var(--text-2);  min-width: 0; }
+  .tl-body strong { color: var(--text); }
+  .tl-sub { font-size: .84rem; color: var(--text-3); line-height: 1.6; }
+
+  /* ---- research ---- */
+  .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .research-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.3rem 1.4rem;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .research-card:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(43, 94, 167, .08); }
+  .research-card h3 { font-size: .98rem; font-weight: 600; margin-bottom: .45rem; }
+  .research-card p { font-size: .88rem; color: var(--text-3); line-height: 1.75; }
+  .research-card .tags { margin-top: .6rem; display: flex; flex-wrap: wrap; gap: .35rem; }
+  .research-card .tag {
+    font-size: .7rem; font-weight: 600; color: var(--accent);
+    background: var(--accent-light); border-radius: 99px; padding: .12rem .55rem;
+  }
+
+  /* ---- publications ---- */
+  .pub-subhead {
+    font-size: .78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--accent);
+    margin: 1.8rem 0 .8rem; padding-bottom: .4rem;
+    border-bottom: 2px solid var(--accent-light);
+  }
+  .pub-subhead:first-of-type { margin-top: 0; }
+  .pub-item {
+    display: block; text-decoration: none;
+    padding: .75rem .8rem; border-radius: 8px;
+    transition: background .15s;
+  }
+  .pub-item:hover { background: var(--card-bg); }
+  .pub-title { font-size: .92rem; font-weight: 500; color: var(--text); line-height: 1.5; }
+  .pub-authors { font-size: .82rem; color: var(--text-3); margin-top: .15rem; }
+  .pub-authors u { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .pub-venue { font-size: .78rem; color: var(--gold); font-weight: 500; margin-top: .2rem; }
+  .pub-item + .pub-item { border-top: 1px solid var(--border); }
+  .pub-filters { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.2rem; }
+  .filter-btn {
+    font-size: .76rem; font-weight: 600; padding: .3rem .8rem;
+    border-radius: 99px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-3); cursor: pointer;
+    transition: all .2s;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .pub-item.hide { display: none; }
+  .pub-note { font-size: .82rem; color: var(--text-3); margin-top: 1.2rem; }
+  .pub-note a { color: var(--accent); text-decoration: none; }
+
+  /* ---- talks ---- */
+  .talk-item {
+    display: grid; grid-template-columns: 100px 1fr; gap: .8rem;
+    padding: .65rem 0; border-bottom: 1px solid var(--border);
+    font-size: .9rem;
+  }
+  .talk-item:last-child { border-bottom: none; }
+  .talk-date { font-weight: 600; color: var(--accent); font-size: .82rem; white-space: nowrap; }
+  .talk-body { color: var(--text-2); }
+  .talk-body strong { color: var(--text); font-weight: 600; }
+  .talk-chip {
+    display: inline-block; font-size: .68rem; font-weight: 600;
+    color: var(--gold); border: 1px solid rgba(184, 134, 11, .25);
+    border-radius: 99px; padding: .05rem .45rem; vertical-align: middle;
+    margin-left: .3rem;
+  }
+  .talk-title { display: block; font-style: italic; color: var(--text-3); font-size: .86rem; margin-top: .15rem; }
+
+  /* ---- contact ---- */
+  .contact-grid { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .contact-grid a {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-size: .88rem; font-weight: 500; color: var(--text-2);
+    text-decoration: none; padding: .45rem 1rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    transition: all .2s;
+  }
+  .contact-grid a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .contact-grid a svg { width: 16px; height: 16px; fill: currentColor; }
+  .contact-note { font-size: .88rem; color: var(--text-3); margin-top: 1rem; max-width: 560px; }
+
+  /* ---- footer ---- */
+  footer {
+    padding: 2rem 0; border-top: 1px solid var(--border);
+    font-size: .78rem; color: var(--text-3); text-align: center;
+  }
+
+  /* ---- responsive ---- */
+  @media (max-width: 720px) {
+    .layout { flex-direction: column; padding-top: 2.2rem; gap: 2rem; }
+    .side { position: static; width: 100%; }
+    .side .social-row { justify-content: center; }
+    .side .avatar { width: 120px; height: 120px; }
+    .timeline-list li { grid-template-columns: 1fr; gap: .2rem; }
+    .talk-item { grid-template-columns: 1fr; gap: .2rem; }
+  }
+</style>
 </head>
 <body>
-  <!-- ================= HEADER ================= -->
-  <header class="hero">
-    <div class="container hero-content">
-      <img src="images/me_250.jpg" alt="Xiaosheng Zhao" class="hero-photo">
-      <div>
-        <h1>Xiaosheng Zhao</h1>
-        <p class="subtitle">Assistant Research Scientist, Johns Hopkins University</p>
-        <p>
-          <a href="mailto:xzhao113@jh.edu">📧 xzhao113@jh.edu</a> |
-          <a href="https://scholar.google.com/citations?user=GBuiltUAAAAJ&hl=en">Google Scholar</a> |
-          <a href="https://orcid.org/0000-0002-8328-1447">ORCID</a> |
-          <a href="https://github.com/Xiaosheng-Zhao">GitHub</a>
-        </p>
-      </div>
-    </div>
-  </header>
 
-  <!-- ================= BIO ================= -->
-  <section class="container bio">
-    <h2>About Me</h2>
-    <p>
-        My research focuses on developing and applying machine learning methods for astrophysics and cosmology,
-        spanning both <strong>Galactic archaeology</strong> and <strong>early-universe inference</strong>.
-        At <strong>Johns Hopkins University</strong>, I currently work on <strong>spectral foundation models</strong>—such as
-        <strong>SpecCLIP</strong> and its fine-tuned extensions—for cross-survey generalization across
-        LAMOST, Gaia XP, DESI, <strong>Prime Focus Spectrograph (PFS)</strong>, etc. I am also interested in the inference of <strong>dark matter profile</strong> from dwarf spheroidal galaxies with PFS.
-        My previous doctoral research at <strong>Tsinghua University</strong> explored the epoch of reionization
-        using <strong>simulation-based inference (SBI)</strong> and <strong>optimal summary statistics</strong>, and introduced
-        generative approaches (e.g., <strong>diffusion models</strong>) for astrophysical image synthesis.
-        Broadly, I am interested in connecting data-driven representation learning with <strong>physical interpretability</strong>
-        to extract scientific insights from large, heterogeneous astronomical datasets.
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Xiaosheng Zhao</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+<aside class="side" id="top">
+
+    <img class="avatar" src="images/me_250.jpg" alt="Xiaosheng Zhao">
+    <h1>Xiaosheng Zhao</h1>
+    <p class="role">Assistant Research Scientist</p>
+    <p class="affiliation">
+      Department of Physics &amp; Astronomy, <a href="https://www.jhu.edu/" target="_blank" rel="noopener">Johns Hopkins University</a>
     </p>
-  </section>
-
-  <!-- ================= PUBLICATIONS ================= -->
-  <section class="container publications">
-    <h2>Selected Publications</h2>
-
-    <div class="pub">
-      <img src="images/Generalize.png" alt="Generalization paper figure">
-      <div>
-        <h3><a href="https://arxiv.org/abs/2602.15021">Generalization from Low- to Moderate-Resolution Spectra with Neural Networks for Stellar Parameter Estimation: A Case Study with DESI</a></h3>
-        <p><strong>Zhao, X.</strong>, Ting, Y.-S., Szalay, A. S., Wyse, R.F.G., Huang, Y., Dobos, L., Budavari, T., Wei, V., 2026, Submitted.</p>
-        <p>We show that simple pre-trained MLPs can generalize effectively from LAMOST to DESI stellar spectra, with performance and optimal fine-tuning strategies depending on the target parameter and metallicity regime.</p>
-      </div>
+    <div class="social-row">
+      <a class="social-pill" href="mailto:xzhao113@jh.edu">
+        <svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 8L3.5 6v12h17V6L12 12zm-.7-2.3l8.2-4.7H4.5l6.8 4.7z"/></svg>
+        Email
+      </a>
+      <a class="social-pill" href="https://scholar.google.com/citations?user=GBuiltUAAAAJ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+        Scholar
+      </a>
+      <a class="social-pill" href="https://github.com/Xiaosheng-Zhao" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.2-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17 5.6 18 6 18 6c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.7-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        GitHub
+      </a>
+      <a class="social-pill" href="https://orcid.org/0000-0002-8328-1447" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM7.4 4.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM6.4 9H8v10H6.4zM10 9h4.6a4.6 4.6 0 0 1 0 9.2H10zm1.6 1.5v6.2h2.9a3.1 3.1 0 0 0 0-6.2z"/></svg>
+        ORCID
+      </a>
+      <a class="social-pill" href="file/Xiaosheng_Zhao_s_Resume_new.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM9 13v-2h6v2H9zm0 4v-2h6v2H9z"/></svg>
+        CV
+      </a>
     </div>
+</aside>
 
-    <div class="pub">
-      <img src="images/CLIP_model_full.png" alt="SpecCLIP figure">
-      <div>
-        <h3><a href="https://arxiv.org/abs/2507.01939">SpecCLIP: Aligning and Translating Spectroscopic Measurements for Stars</a></h3>
-        <p><strong>Zhao, X.</strong>, Huang, Y., Xue, G., Xiao Kong, et al., 2026, <em>Astrophysical Journal</em>, 998, 189</p>
-        <p>Foundation model for stellar spectra enabling cross-survey generalization between LAMOST LRS and Gaia XP.</p>
-      </div>
-    </div>
+<main class="main">
+<section id="about">
+  <h2><span class="sec-label">About me</span></h2>
+  <div class="about-body">
+    <p>I am an <strong>Assistant Research Scientist</strong> in Physics &amp; Astronomy at <strong>Johns Hopkins University</strong>, working with Prof. Alex Szalay and Prof. Rosemary Wyse. I use <strong>machine learning</strong> to address fundamental questions in astrophysics — from the chemical evolution of the Milky Way to the physics of the first billion years of the universe.</p>
 
-    <div class="pub">
-        <img src="images/Diffusion.png" alt="DDPM figure">
-        <div>
-            <h3><a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.tmp.2660Z/abstract">
-                Can Diffusion Models Conditionally Generate Astrophysical Images?</a></h3>
-            <p><strong>Zhao, X.</strong>, Ting, Y.-S., Diao, K., Mao, Y., 2023, <em>Monthly Notices of the Royal Astronomical Society</em>, 526, 1699</p>
-            <p>Applies denoising diffusion probabilistic models (DDPM) for conditional astrophysical image generation, bridging physical priors and deep generative modeling.</p>
-        </div>
-    </div>
+    <p>As a member of the <strong>JHU Galactic Archaeology group</strong> for the Subaru <em>Prime Focus Spectrograph</em> (PFS), I develop spectral foundation models (SpecCLIP and LoRA fine-tuning) to align and transfer stellar information across surveys (LAMOST, Gaia XP, DESI, PFS), estimate chemical abundances and radial velocities, and constrain the inner dark matter profiles of dwarf spheroidal galaxies.</p>
 
-    <div class="pub">
-        <img src="images/samples.png" alt="3D Lightcone Inference figure">
-        <div>
-            <h3><a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...926..151Z/abstract">
-                Simulation-Based Inference of Reionization Parameters from 3D Tomographic 21 cm Lightcone Images
-            </a></h3>
-            <p><strong>Zhao, X.</strong>, Mao, Y., Cheng, C., Wandelt, B. D., 2022, <em>Astrophysical Journal</em>, 926, 151</p>
-            <p>
-                Introduced a simulation-based inference framework that constrains reionization parameters 
-                directly from 3D 21 cm lightcone images. 
-            </p>
-        </div>
-    </div>
+    <p>During my PhD at Tsinghua University (advisor: Prof. Yi Mao), I studied the <strong>Epoch of Reionization</strong> — the cosmic dawn when the first stars ionized the intergalactic medium. I built tools including simulation-based inference, wavelet scattering transforms, and diffusion models to extract cosmological information from faint 21 cm data. I also spent 18 months as a visiting researcher at <strong>Institut d'Astrophysique de Paris</strong> (mentor: Prof. Benjamin D. Wandelt).</p>
+  </div>
+</section>
 
-  </section>
+<section id="experience">
+  <h2><span class="sec-label">Experience</span></h2>
+  <ul class="timeline-list">
+    <li>
+      <div class="tl-date">Nov 2025 –</div>
+      <div class="tl-body"><strong>Assistant Research Scientist, Johns Hopkins University</strong>
+      <div class="tl-sub">With Prof. Alex Szalay &amp; Prof. Rosemary Wyse</div></div>
+    </li>
+    <li>
+      <div class="tl-date">Aug 2024 – Nov 2025</div>
+      <div class="tl-body"><strong>Postdoctoral Fellow, Johns Hopkins University</strong>
+      <div class="tl-sub">PFS science return · Mentors: Szalay &amp; Wyse</div></div>
+    </li>
+    <li>
+      <div class="tl-date">Jul – Aug 2024</div>
+      <div class="tl-body"><strong>Visiting Researcher, NAOC / UCAS, Beijing</strong>
+      <div class="tl-sub">Host: Prof. Yang Huang · Stellar spectra foundation models</div></div>
+    </li>
+    <li>
+      <div class="tl-date">Nov 2022 – May 2024</div>
+      <div class="tl-body"><strong>Long-term Visiting Researcher, Institut d'Astrophysique de Paris</strong>
+      <div class="tl-sub">Mentor: Prof. Benjamin D. Wandelt · Explainable ML for astrophysics</div></div>
+    </li>
+  </ul>
+</section>
 
-  <!-- ================= EXPERIENCE ================= -->
-  <section class="container experience">
-    <h2>Education & Experience</h2>
+<section id="education">
+  <h2><span class="sec-label">Education</span></h2>
+  <ul class="timeline-list">
+    <li>
+      <div class="tl-date">2018 – 2024</div>
+      <div class="tl-body"><strong>PhD in Astronomy, Tsinghua University</strong>
+      <div class="tl-sub">Thesis: Exploring the Epoch of Reionization with Machine Learning · Advisor: Prof. Yi Mao</div></div>
+    </li>
+    <li>
+      <div class="tl-date">2014 – 2018</div>
+      <div class="tl-body"><strong>B.S. in Physics, Wuhan University</strong></div>
+    </li>
+  </ul>
+</section>
 
-    <div class="exp-item">
-      <h3>Assistant Research Scientist, Johns Hopkins University</h3>
-      <p><em>Nov 2025 – Present | Baltimore, USA</em><br>
-      Working with Prof. Alex Szalay & Prof. Rosemary Wyse</p>
-    </div>
+<section id="publications">
+  <h2><span class="sec-label">Publications</span></h2>
+  <div class="pub-filters" role="tablist">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ml">ML Methods</button>
+    <button class="filter-btn" data-filter="cosmo">Cosmology</button>
+    <button class="filter-btn" data-filter="galactic">Galactic</button>
+    <button class="filter-btn" data-filter="review">Reviews</button>
+  </div>
 
-    <div class="exp-item">
-      <h3>Postdoctoral Fellow, Johns Hopkins University</h3>
-      <p><em>Aug 2024 – Nov 2025 | Baltimore, USA</em><br>
-      Supervisors: Prof. Alex Szalay & Prof. Rosemary Wyse</p>
-    </div>
+  <div class="pub-subhead">Refereed Journals</div>
+  <div id="publist">
+    <a class="pub-item" data-cat="galactic ml" href="https://arxiv.org/abs/2602.15021" target="_blank" rel="noopener">
+      <div class="pub-title">Generalization from Low- to Moderate-Resolution Spectra with Neural Networks for Stellar Parameter Estimation: A Case Study with DESI</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y.-S. Ting, R. F. G. Wyse, A. S. Szalay, Y. Huang, L. Dobos, T. Budavári, V. Wei</div>
+      <div class="pub-venue">ApJ 1006, 2 (2026)</div>
+    </a>
+    <a class="pub-item" data-cat="galactic ml" href="https://arxiv.org/abs/2507.01939" target="_blank" rel="noopener">
+      <div class="pub-title">SpecCLIP: Aligning and Translating Spectroscopic Measurements for Stars</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y. Huang, G. Xue, X. Kong, J. Liu, X. Tang, T. C. Beers, Y.-S. Ting, A.-L. Luo</div>
+      <div class="pub-venue">ApJ 998, 189 (2026)</div>
+    </a>
+    <a class="pub-item" data-cat="ml" href="https://iopscience.iop.org/article/10.1088/2632-2153/ade94d/meta" target="_blank" rel="noopener">
+      <div class="pub-title">Ordered Embeddings and Intrinsic Dimensionalities with Information-Ordered Bottlenecks</div>
+      <div class="pub-authors">M. Ho, <u>X. Zhao</u>, B. D. Wandelt</div>
+      <div class="pub-venue">Machine Learning: Science and Technology (2025)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://ui.adsabs.harvard.edu/abs/2023arXiv231017602Z/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">Simulation-based Inference of Reionization Parameters from 3D Tomographic 21 cm Light-cone Images. II. Application of Solid Harmonic Wavelet Scattering Transform</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y. Mao, S. Zuo, B. D. Wandelt</div>
+      <div class="pub-venue">ApJ 973, 41 (2024)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo" href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.543.1092B/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">Square Kilometre Array Science Data Challenge 3a: Foreground Removal for an EoR Experiment</div>
+      <div class="pub-authors">A. Bonaldi, …, <u>X. Zhao</u>, …</div>
+      <div class="pub-venue">MNRAS 543, 2 (2025)</div>
+    </a>
+    <a class="pub-item" data-cat="ml" href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.1699Z/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">Can Diffusion Model Conditionally Generate Astrophysical Images?</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y.-S. Ting, K. Diao, Y. Mao</div>
+      <div class="pub-venue">MNRAS 526, 1699 (2023)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo" href="https://ui.adsabs.harvard.edu/abs/2022ApJ...933..236Z/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">Implicit Likelihood Inference of Reionization Parameters from the 21 cm Power Spectrum</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y. Mao, B. D. Wandelt</div>
+      <div class="pub-venue">ApJ 933, 236 (2022)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://ui.adsabs.harvard.edu/abs/2022ApJ...926..151Z/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">Simulation-Based Inference of Reionization Parameters from 3D Tomographic 21 cm Lightcone Images</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y. Mao, C. Cheng, B. D. Wandelt</div>
+      <div class="pub-venue">ApJ 926, 151 (2022)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://ui.adsabs.harvard.edu/abs/2025arXiv251108716S/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">How to Evaluate the Sufficiency and Complementarity of Summary Statistics for Cosmic Fields: An Information-theoretic Perspective</div>
+      <div class="pub-authors">C. Sui, Y. Mao, <u>X. Zhao</u>, T. Jing, B. D. Wandelt</div>
+      <div class="pub-venue">ApJ 998, 2 (2026)</div>
+    </a>
+  </div>
 
-    <div class="exp-item">
-      <h3>Visiting, University of Chinese Academy of Sciences/NAOC</h3>
-      <p><em>Jul 2024 – Aug 2024 | Host: Prof. Yang Huang</em><br>
-      Focus: <em>stellar spectra foundation models.</em></p>
-    </div>
+  <div class="pub-subhead">Conference Proceedings</div>
+  <div>
+    <a class="pub-item" data-cat="galactic ml" href="https://arxiv.org/abs/2507.20972" target="_blank" rel="noopener">
+      <div class="pub-title">Finetuning Stellar Spectra Foundation Models with LoRA</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y.-S. Ting, A. S. Szalay, Y. Huang</div>
+      <div class="pub-venue">ICML ML4Astro Workshop · Spotlight (2025)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://ui.adsabs.harvard.edu/abs/2023arXiv230709530Z/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">3D ScatterNet: Inference from 21 cm Light-cones</div>
+      <div class="pub-authors"><u>X. Zhao</u>, S. Zuo, Y. Mao</div>
+      <div class="pub-venue">ICML ML4Astro Workshop (2023)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://ui.adsabs.harvard.edu/abs/2023arXiv230704994S/abstract" target="_blank" rel="noopener">
+      <div class="pub-title">Evaluating Summary Statistics with Mutual Information for Cosmological Inference</div>
+      <div class="pub-authors">C. Sui, <u>X. Zhao</u>, T. Jing, Y. Mao</div>
+      <div class="pub-venue">ICML ML4Astro Workshop (2023)</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://arxiv.org/abs/2607.03606" target="_blank" rel="noopener">
+      <div class="pub-title">Machine Learning and the SKA for Cosmic Dawn and the Epoch of Reionization</div>
+      <div class="pub-authors">A. Acharya, …, <u>X. Zhao</u></div>
+      <div class="pub-venue">Advancing Astrophysics with the SKA II (AASKAII)</div>
+    </a>
+  </div>
 
-    <div class="exp-item">
-      <h3>Visiting, Institut d'Astrophysique de Paris</h3>
-      <p><em>2022 – 2024 | Mentor: Prof. Benjamin D. Wandelt</em><br>
-      Focus: <em>(explainable) ML for astrophysics and cosmology</em></p>
-    </div>
+  <div class="pub-subhead">Under Review &amp; Invited Chapters</div>
+  <div>
+    <a class="pub-item" data-cat="ml review" href="https://arxiv.org/abs/2608.02573" target="_blank" rel="noopener">
+      <div class="pub-title">Foundation Models for Astrophysics</div>
+      <div class="pub-authors"><u>X. Zhao</u>, Y.-S. Ting</div>
+      <div class="pub-venue">Invited chapter — "ML Techniques for Astrophysics and Cosmology"</div>
+    </a>
+    <a class="pub-item" data-cat="galactic" href="https://arxiv.org/abs/2604.09875" target="_blank" rel="noopener">
+      <div class="pub-title">Galactic Archaeology with the Subaru 'Ōnohi'ula Prime Focus Spectrograph Strategic Program</div>
+      <div class="pub-authors">M. Chiba, …, <u>X. Zhao</u></div>
+      <div class="pub-venue">PFS Strategic Program overview</div>
+    </a>
+    <a class="pub-item" data-cat="cosmo ml" href="https://arxiv.org/abs/2502.08152" target="_blank" rel="noopener">
+      <div class="pub-title">Likelihood-free Model Selection in Cosmic Reionization with 3D Tomographic 21 cm Lightcone Images</div>
+      <div class="pub-authors">T. Binnie, <u>X. Zhao</u>, J. R. Pritchard, Y. Mao</div>
+      <div class="pub-venue">Submitted to AAS Journals (2025)</div>
+    </a>
+  </div>
 
-    <div class="exp-item">
-      <h3>PhD in Astronomy, Tsinghua University</h3>
-      <p><em>2018 – 2024 | Advisor: Prof. Yi Mao</em><br>
-      Thesis: <em>Exploring the Epoch of Reionization with Machine Learning</em></p>
-    </div>
+  <p class="pub-note">→ Full record on <a href="https://scholar.google.com/citations?user=GBuiltUAAAAJ">Google Scholar</a></p>
+</section>
 
-    <div class="exp-item">
-      <h3>BSc in Physics, Wuhan University</h3>
-      <p><em>2014 – 2018</em></p>
-    </div>
-  </section>
+<section id="talks">
+  <h2><span class="sec-label">Selected Talks</span></h2>
 
-  <!-- ================= TALKS ================= -->
-  <section class="container talks">
-    <h2>Talks & Highlights</h2>
-    <ul>
-      <li><strong>247th AAS Meeting (2026, Phoenix, USA)</strong> — <em>SpecCLIP: Aligning and Translating Spectroscopic Measurements for Stars</em></li>
-      <li><strong>ML x Astro/Cosmo Group Meeting (2025, JHU, USA)</strong> — <em>The Role of Foundation Models: A Case Study for Stellar Spectra.</em></li>
-      <li><strong>ICML 2025 ML4Astro Workshop (2025, Vancouver, Canada)</strong> — <em>Spotlight talk; Finetuning Stellar Spectra Foundation Models with LoRA.</em></li>
-      <li><strong>JHU/STScI CAS Wine & Cheese Seminar (2025, JHU, USA)</strong> — <em>From 21cm Astrophysics to Galactic Archaeology: Enriching Physics-Driven Analysis with Machine Learning.</em></li>
-      <li><strong>Astro Coffee (2023, IAS, USA)</strong> — <em>Can Diffusion Model Conditionally Generate Astrophysical Images?</em></li>
-      <li><strong>Understanding the Epoch of Reionization (2023, Sexten, Italy)</strong> — <em>Implicit Likelihood Inference of Reionization Parameters from 21 cm Power Spectrum and solid harmonic wavelet scattering coefficients.</em></li>
-    </ul>
-  </section>
+  <div class="talk-item">
+    <div class="talk-date">Jul 2026</div>
+    <div class="talk-body"><strong>2nd Annual Cosmic Horizons Conference</strong><span class="talk-chip">Contributed</span><span class="tl-sub"> · UVA, USA</span>
+    <span class="talk-title">Decoding the Chemical Fossil Record: Machine Learning and Foundation Models for Near-Field Cosmology</span></div>
+  </div>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Xiaosheng Zhao | Johns Hopkins University</p>
-  </footer>
+  <div class="talk-item">
+    <div class="talk-date">May 2026</div>
+    <div class="talk-body"><strong>LSST Discovery Alliance Regional Meeting</strong><span class="talk-chip">Contributed</span><span class="tl-sub"> · JHU, USA</span>
+    <span class="talk-title">Cross-Modal Learning for Galactic Archaeology: Prospects in the Rubin Era</span></div>
+  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <div class="talk-item">
+    <div class="talk-date">Apr 2026</div>
+    <div class="talk-body"><strong>BCCP / Cosmology Seminar</strong><span class="talk-chip">Seminar</span><span class="tl-sub"> · UC Berkeley</span>
+    <span class="talk-title">Decoding the Chemical Fossil Record: Machine Learning and Foundation Models for Near-Field Cosmology</span></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-date">Apr 2026</div>
+    <div class="talk-body"><strong>Center for Decoding the Universe Journal Club</strong><span class="talk-chip">Journal club</span><span class="tl-sub"> · Stanford</span>
+    <span class="talk-title">Decoding the Chemical Fossil Record: Machine Learning and Foundation Models for Near-Field Cosmology</span></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-date">Jan 2026</div>
+    <div class="talk-body"><strong>247th AAS Meeting</strong><span class="talk-chip">Contributed</span><span class="tl-sub"> · Phoenix, USA</span>
+    <span class="talk-title">SpecCLIP: Aligning and Translating Spectroscopic Measurements for Stars</span></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-date">Jul 2025</div>
+    <div class="talk-body"><strong>ICML 2025 ML4Astro Workshop</strong><span class="talk-chip">Spotlight</span><span class="tl-sub"> · Vancouver, Canada</span>
+    <span class="talk-title">Finetuning Stellar Spectra Foundation Models with LoRA</span></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-date">Apr 2025</div>
+    <div class="talk-body"><strong>JHU/STScI CAS Wine &amp; Cheese Seminar</strong><span class="talk-chip">Seminar</span><span class="tl-sub"> · JHU</span>
+    <span class="talk-title">From 21 cm Astrophysics to Galactic Archaeology: Enriching Physics-Driven Analysis with Machine Learning</span></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-date">Sep 2023</div>
+    <div class="talk-body"><strong>Astro Coffee</strong><span class="talk-chip">Informal</span><span class="tl-sub"> · IAS, Princeton</span>
+    <span class="talk-title">Can Diffusion Model Conditionally Generate Astrophysical Images?</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2><span class="sec-label">Contact</span></h2>
+  <div class="contact-grid">
+    <a href="mailto:xzhao113@jh.edu">
+      <svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 8L3.5 6v12h17V6L12 12zm-.7-2.3l8.2-4.7H4.5l6.8 4.7z"/></svg>
+      xzhao113@jh.edu
+    </a>
+    <a href="https://scholar.google.com/citations?user=GBuiltUAAAAJ" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+      Google Scholar
+    </a>
+    <a href="https://github.com/Xiaosheng-Zhao" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.2-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17 5.6 18 6 18 6c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.7-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      GitHub
+    </a>
+    <a href="https://orcid.org/0000-0002-8328-1447" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM7.4 4.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM6.4 9H8v10H6.4zM10 9h4.6a4.6 4.6 0 0 1 0 9.2H10zm1.6 1.5v6.2h2.9a3.1 3.1 0 0 0 0-6.2z"/></svg>
+      ORCID
+    </a>
+    <a href="file/Xiaosheng_Zhao_s_Resume_new.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM9 13v-2h6v2H9zm0 4v-2h6v2H9z"/></svg>
+      Download CV (PDF)
+    </a>
+  </div>
+  <p class="contact-note">Department of Physics &amp; Astronomy, Johns Hopkins University · Baltimore, MD 21218</p>
+</section>
+
+<footer>
+  © 2026 Xiaosheng Zhao · Department of Physics &amp; Astronomy, Johns Hopkins University
+  
+</footer>
+</main>
+</div>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.pub-item').forEach(p => {
+      p.classList.toggle('hide', !(f === 'all' || p.dataset.cat.split(' ').includes(f)));
+    });
+  });
+});
+</script>
 </body>
 </html>
-
