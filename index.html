@@ -71,8 +71,8 @@
 
   /* ---- layout: narrow side + main ---- */
   .layout {
-    max-width: 1080px; margin: 0 auto;
-    display: flex; gap: 3.5rem; align-items: flex-start;
+    max-width: 1020px; margin: 0 auto;
+    display: flex; gap: 3rem; align-items: flex-start;
     padding: 3rem 1.5rem 0;
   }
   .side {
@@ -110,8 +110,9 @@
   }
   .side .social-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
   .side .social-pill svg { width: 12px; height: 12px; fill: currentColor; }
-  .main { flex: 0 1 800px; min-width: 0; }
-  .about-body p { font-size: .98rem; color: var(--text-2); margin-bottom: 1rem; line-height: 1.75; }
+  .main { flex: 0 1 720px; min-width: 0; }
+  .about-body p { font-size: .98rem; color: var(--text-2); margin-bottom: 1rem; line-height: 1.75; text-align: justify; hyphens: auto; }
+  .about-body { text-align: justify; hyphens: auto; }
   .about-body strong { color: var(--text); font-weight: 600; }
   .about-body a { color: var(--accent); text-decoration: none; }
   .about-body a:hover { text-decoration: underline; }
